@@ -1,4 +1,18 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+	experimental: {
+		appDir: true,
+	},
+	images: {
+		remotePatterns: [
+			{
+				protocol: "https",
+				port: "",
+				hostname: "avatars.githubusercontent.com",
+				pathname: "/u/**",
+			},
+		],
+	},
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
