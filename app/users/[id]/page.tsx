@@ -1,3 +1,4 @@
+import FollowButton from "@/component/FollowButton/FollowButton";
 import { prisma } from "@/lib/prisma";
 import { Metadata } from "next";
 
@@ -18,15 +19,14 @@ export default async function UserProfile({ params }: Props) {
 	return (
 		<div>
 			<h1 className="text-black">{name}</h1>
-
 			<img
 				width={300}
 				src={image ?? "/mememan.webp"}
 				alt={`${name}'s profile`}
 			/>
-
 			<h3 className="text-black">Bio</h3>
 			<p className="text-black">{bio}</p>
+			<FollowButton targetUserId={params.id} />
 		</div>
 	);
 }
